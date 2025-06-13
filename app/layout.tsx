@@ -1,13 +1,6 @@
-'use client'
-
 import type React from 'react'
-import { Amplify } from 'aws-amplify'
+import { AmplifyAuthProvider } from './AmplifyAuthProvider'
 import './app.css'
-import { Authenticator } from '@aws-amplify/ui-react'
-import '@aws-amplify/ui-react/styles.css'
-import outputs from '@/amplify_outputs.json'
-
-Amplify.configure(outputs)
 
 export default function RootLayout({
   children,
@@ -17,7 +10,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Authenticator>{children}</Authenticator>
+        <AmplifyAuthProvider>{children}</AmplifyAuthProvider>
       </body>
     </html>
   )
